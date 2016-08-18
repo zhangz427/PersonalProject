@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <constructor-arg name="sentinelConfig" ref="redisSentinelConfiguration"/>
+        <property name="password" value="${redis.password}" />
+    </bean>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"><!--采用StringSerializer序列化，为了方便修改数值-->
+        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+        <property name="KeySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="ValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+    </bean>
+    <bean name="redisSentinelConfiguration" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
+        <constructor-arg name="master" value="${redis.master.name}" />
+        <constructor-arg name="sentinelHostAndPorts">
+            <set>
+                <value>${redis.sentinel1}</value>
+                <value>${redis.sentinel2}</value>
+                <value>${redis.sentinel3}</value>
+            </set>
+        </constructor-arg>
+
+    </bean>
+
+</beans>

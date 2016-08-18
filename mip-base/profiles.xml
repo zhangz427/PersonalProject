@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profilesXml xmlns="http://maven.apache.org/PROFILES/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/PROFILES/1.0.0 http://maven.apache.org/xsd/profiles-1.0.0.xsd">
+
+    <profiles>
+
+        <profile>
+            <id>local</id>
+            <properties>
+                <deploy.type>local</deploy.type>
+                <mip.log.path>./</mip.log.path>
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>dev</id>
+
+            <properties>
+                <deploy.type>dev</deploy.type>
+                <mip.log.path>./</mip.log.path>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>test</id>
+
+            <properties>
+                <deploy.type>test</deploy.type>
+                <mip.log.path>/opt/logs/resin/mip</mip.log.path>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+
+            <properties>
+                <deploy.type>prod</deploy.type>
+                <mip.log.path>/opt/logs/resin/mip</mip.log.path>
+            </properties>
+        </profile>
+
+    </profiles>
+
+</profilesXml>

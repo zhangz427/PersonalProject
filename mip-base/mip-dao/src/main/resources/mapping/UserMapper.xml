@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.womai.m.mip.dao.test.UserMapper">
+    <!--<cache />-->
+    <resultMap id="BaseResultMap" type="com.womai.m.mip.domain.test.User">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="uname" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, uname
+    </sql>
+    <select id="selectUserById" resultMap="BaseResultMap"
+            parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectUserByName" resultMap="BaseResultMap"
+            parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where uname = #{name,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insertUser" parameterType="com.womai.m.mip.domain.test.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user
+        (
+        uname
+        )
+        values (
+        #{name,jdbcType=VARCHAR}
+        )
+    </insert>
+
+
+</mapper>

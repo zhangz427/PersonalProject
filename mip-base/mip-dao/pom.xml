@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mip</artifactId>
+        <groupId>com.womai.m</groupId>
+        <version>${mip-version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mip-dao</artifactId>
+    <name>MIP Modular - Dao</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.womai.m</groupId>
+            <artifactId>mip-domain</artifactId>
+            <version>${mip-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.womai.m</groupId>
+            <artifactId>mip-common</artifactId>
+            <version>${mip-version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.womai.m.mip.dao.order.OrderMapper">
+
+    <insert id="insertOrder" parameterType="com.womai.m.mip.domain.order.raw.ROOrderDetail" useGeneratedKeys="true" keyProperty="id">
+        insert into order_detail
+        (
+        total_amount, paymode_id, paymode_name, order_type
+        )
+        values (
+        #{total_amount,jdbcType=VARCHAR},
+        #{paymodeId,jdbcType=VARCHAR},
+        #{paymodeName,jdbcType=VARCHAR},
+        #{orderType,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <insert id="insertOrderDetailInfo" parameterType="com.womai.m.mip.domain.order.raw.Orderdetailinfo" >
+        insert into order_detail_info
+        (
+        id, order_aliascode, order_status, order_amount, order_point, order_creattime, order_payway, card_payway, invoice, remark_msg
+        )
+        values (
+        #{id,jdbcType=INTEGER},
+        #{order_aliascode,jdbcType=VARCHAR},
+        #{order_status,jdbcType=VARCHAR},
+        #{order_amount,jdbcType=VARCHAR},
+        #{order_point,jdbcType=VARCHAR},
+        #{order_creattime,jdbcType=VARCHAR},
+        #{order_payway,jdbcType=VARCHAR},
+        #{card_payway,jdbcType=BOOLEAN},
+        #{invoice,jdbcType=VARCHAR},
+        #{remark_msg,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <insert id="insertOrderDetailStatistics" parameterType="com.womai.m.mip.domain.order.raw.Orderdetailstatistics" >
+        insert into order_detail_statistics
+        (
+        id, weight, pro_total_price, freight, preferences_freight, card_offset, order_point, order_privilege, womaicard_pay
+        )
+        values (
+        #{id,jdbcType=INTEGER},
+        #{weight.value,jdbcType=VARCHAR},
+        #{pro_total_price.value,jdbcType=VARCHAR},
+        #{freight.value,jdbcType=VARCHAR},
+        #{preferences_freight.value,jdbcType=VARCHAR},
+        #{card_offset.value,jdbcType=VARCHAR},
+        #{order_point.value,jdbcType=VARCHAR},
+        #{order_privilege.value,jdbcType=BOOLEAN},
+        #{womaicard_pay.value,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <insert id="insertOrderdetailreceiveinfo" parameterType="com.womai.m.mip.domain.order.raw.Orderdetailreceiveinfo" >
+        insert into order_detail_receive_info
+        (
+        id, name, phone, address, send_time, send_way
+        )
+        values (
+        #{id,jdbcType=INTEGER},
+        #{name,jdbcType=VARCHAR},
+        #{phone,jdbcType=VARCHAR},
+        #{address,jdbcType=VARCHAR},
+        #{send_time,jdbcType=VARCHAR},
+        #{send_way,jdbcType=VARCHAR}
+        )
+    </insert>
+
+
+</mapper>
