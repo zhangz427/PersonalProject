@@ -1,0 +1,1 @@
+{"baiDuGeoApiUrl":"http://api.map.baidu.com/geocoder/v2/","baiDuGeoApiAk":"teFzigZtlFqmC0b69khQ8Lrc","RedisMasterName":"mymaster","RedisPassword":"f8b820eb638d0a43e699d899281116695f12fbea330c61bda948bb12ec5ba18b","RedisSentinelAddrs":["10.6.26.66:26379", "10.6.26.67:26379", "10.6.26.67:27379"],"ThreeDESKey":"qwertyuiopasdfghjkl;'zxc"}
