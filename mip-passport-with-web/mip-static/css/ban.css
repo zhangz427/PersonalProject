@@ -1,0 +1,57 @@
+﻿@charset "utf-8";
+/*下载浮层--首页*/
+.s-index{width:320px; display: block;position: relative;margin:0 auto;height:160px;}
+.s-index .banner-index-bg{width:100%;position: absolute;z-index: 1;}
+.index-wrap{position: absolute;z-index: 3;width:244px;left:50%;margin-left:-122px;display:block;top:10px;}
+.s-index .s-index-left,.s-index .s-index-right{display: table-cell;vertical-align: middle;float:none;}
+.s-index .s-index-right{padding-left: 22px;position: absolute;top: 35px;right: 30px;}
+.s-index-right img{margin-bottom:10px;}
+.s-index-downBtn{background-color: #fffc00;width:153px;height:36px;border-radius: 20px;display:table-cell; vertical-align:middle;line-height: 30px; text-align: center;}
+.s-index-downBtn img{vertical-align: middle;margin-bottom:0;}
+.s-index .s-index-left{margin-left: 12.9%;}
+.s-index-close{width:22px;height:22px;position:absolute;top:8px;left:300px;border-radius:11px;background:rgba(0,0,0,0.6);color:#fff;display:block;text-decoration:none; text-align: center;z-index:200;}
+.s-index-close em img{margin-top:6px;}
+.s-index .index_bg{width:100%;display: block;}
+
+/*下载浮层--其他*/
+.s-layer{width:100%;height:57px;left:0;position:fixed;bottom:0px;background: url("../images/banner-other-bg.png") no-repeat; background-size:100% 100%;overflow:hidden;display:block;padding:0;z-index:10000;/**zoom:0.5;-moz-transform:scale(0.5);-moz-transform-origin:top left;**/}
+.s-layer-close-wrap{width:30px;height:30px;position:fixed;bottom:27px;overflow:hidden; z-index: 10000;right:0;}
+.s-layer-close{width:60px;height:60px;position:absolute;bottom:5px;right:-35px;border-radius:30px;background:rgba(0,0,0,0.2);color:#fff;display:block;text-decoration:none;}
+.s-layer-close em{color:#fff;position:absolute; top:40px; right:18px; display:inline-block;font:16pt "微软雅黑";width:30px; height:25px;}
+.s-Btn35{height:27px; width:70px;}
+.s-inblock{ display:inline-block}
+.s-layer .wrapper,.s-product-container .wrapper{display:block; height:114px; width:100%;}
+.s-layer .wrapper .img,.s-product-container .wrapper .img{position:absolute;left:60px;top:2px;width:154px;height:44px;}
+.s-layer .wrapper a,.s-product-container .wrapper a{position:absolute;width:87px;height:32px; text-align:center;line-height: 26px;background-color:#fffc00;border-radius: 30px;right:15px;top:15px;display:table;}
+.s-layer .wrapper a img,.s-product-container .wrapper a img{vertical-align:middle; line-height: 15px;margin-top:9px;}
+.s-layer em,.s-product-container em{position: absolute;bottom: 2px;right:2px;}
+.s-layer em img,.s-layer em,.s-product-container em img,.s-product em{width:19px;height:18px;}
+.s-layer .wrapper span,.s-product-container .wrapper span{width:35px;height:35px;background-color: #3eb400;position:absolute;left:13px;top:10px;border-radius: 5px;text-align: center;display:table-cell;vertical-align: middle;line-height: 35px; border:2px solid #fff;}
+.s-layer .wrapper span img,.s-product-container .wrapper span img{vertical-align: middle;margin-top: 6px;}
+.s-layer .wrapper b,.s-product-container .wrapper b{color: #fff;font: 16px bold '微软雅黑';line-height: 20px;position: absolute;left: 55px;top:10px; }
+.wrapper .banner-icon{position: absolute;top: 0;right:110px;}
+/*下载浮层--商品详情*/
+.s-product-container{position:relative;margin:0;width:100%;height:57px;background: url("../images/banner-other-bg.png") no-repeat; background-size:100% 100%;overflow:hidden;display:block;padding:0;z-index:10000;}
+.s-product-fixed{position:fixed;top:0;left:0;overflow:hidden;display:block;padding:0;z-index:10000;}
+.s-close-product{top:0;bottom:auto;}
+/*下载页*/
+.dl-bg .container{width:100%;padding:0;position:absolute;left:50%;margin-left:-50%; text-align: center;}
+.dl-bg{width:320px;margin:0 auto;height:100%;overflow:hidden; }
+.con{line-height:70px;display:block;width:100%;}
+.dl-header,.dl-bg .container h4{background-color:#fff;}
+.dl-header img{display: block;margin: 0 auto;}
+.dl-footer-right{width:140px;}
+.dl-bg .container h3{color:#666666;font:bolder 12pt "微软雅黑";margin:10px auto 5px auto; text-align: center;width:100%; letter-spacing: 2px;}
+.dl-bg .container h4{color: #45b701;font:bold 14pt "微软雅黑";width:100%;padding: 30px 0 10px 0;line-height:20px;margin:0 auto;vertical-align: middle;}
+.dl-bg .container h4 img{width:140px;vertical-align: top;}
+.dl-footer{background-color:#45b701;margin:0;width:100%;padding-top:20px;padding-bottom: 10px;}
+.dl-footer-div{width:100%;position: relative;margin:0 auto;}
+.dl-footer-div a,.dl-footer-div a:hover,.dl-footer-div a:visited{width:67.6%;height:56px;line-height:56px;background-color: #fff;display:block;border-radius: 35px; text-decoration: none;color: #45b701;font:bold 14pt "微软雅黑";vertical-align: middle;margin:0 auto 10px auto;}
+.dl-footer-div a img{width:25px;height:28px;margin:12px 10px auto auto;vertical-align: text-bottom;}
+
+/*微信中间页*/
+div.dl-weixin-bg{width:422px;height:396px;position:absolute;left:50%;margin-left:-211px;margin-top:30px;zoom:0.5;display:none;-moz-transform:scale(0.5);}
+
+
+/*选择站点DIV,首页container*/
+#id-content2,#id-content1,#id-content1 header{position:relative;z-index: 0;}

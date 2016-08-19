@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--测试任务-->
+    <!--<bean id="activityTestJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="group" value="activity_group"/>
+        <property name="name" value="activity_test"/>
+        <property name="concurrent" value="false"/>
+        <property name="targetObject">
+            <ref bean="activityTestTask"/>
+        </property>
+        <property name="targetMethod">
+            <value>executeExcludeTask</value>
+        </property>
+    </bean>
+
+    <bean id="activityTestTrigger"
+          class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="name" value="activity_test_trigger"/>
+        <property name="group" value="activity_group"/>
+        <property name="jobDetail">
+            <ref bean="activityTestJobDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>0/10 * * * * ?</value>
+        </property>
+    </bean>-->
+
+    <!--缓存快鲜生首页内容任务-->
+    <bean id="cacheKxsActivityJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="group" value="activity_group"/>
+        <property name="name" value="cacheKxsActivity"/>
+        <!--false表示等上一个任务执行完后再开启新的任务-->
+        <property name="concurrent" value="false"/>
+        <property name="targetObject">
+            <ref bean="cacheKxsActivityListTask"/>
+        </property>
+        <property name="targetMethod">
+            <value>executeExcludeTask</value>
+        </property>
+    </bean>
+    <!--  调度触发器 -->
+    <bean id="cacheKxsActivityTrigger"
+          class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="name" value="cacheKxsActivity"/>
+        <property name="group" value="activity_group"/>
+        <property name="jobDetail">
+            <ref bean="cacheKxsActivityJobDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>0 0/1 * * * ?</value>
+        </property>
+    </bean>
+
+
+
+    <!--缓存吃货护照活动内容任务-->
+    <bean id="cacheActivityProductListJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="group" value="activity_group"/>
+        <property name="name" value="cacheActivityProductList"/>
+        <!--false表示等上一个任务执行完后再开启新的任务-->
+        <property name="concurrent" value="false"/>
+        <property name="targetObject">
+            <ref bean="cacheActivityProductListTask"/>
+        </property>
+        <property name="targetMethod">
+            <value>executeExcludeTask</value>
+        </property>
+    </bean>
+    <!--  调度触发器 -->
+    <bean id="cacheActivityProductListTrigger"
+          class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="name" value="cacheActivityProductList"/>
+        <property name="group" value="activity_group"/>
+        <property name="jobDetail">
+            <ref bean="cacheActivityProductListJobDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>0 0/1 * * * ?</value>
+        </property>
+    </bean>
+
+    <!-- 调度工厂 -->
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <!--<ref bean="activityTestTrigger"/>
+                <ref bean="cacheKxsActivityTrigger"/>
+                <ref bean="cacheActivityProductListTrigger"/>-->
+            </list>
+        </property>
+    </bean>
+
+</beans>
